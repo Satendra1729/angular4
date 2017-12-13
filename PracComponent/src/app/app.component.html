@@ -1,0 +1,17 @@
+<h1>{{practicalTitle}}</h1>
+<hr/>
+<div *ngFor = "let friend of friends">
+<h4>{{friend.name}}</h4>
+	<label>Name : {{friend.name}}</label><br/>
+	<label>Address : {{friend.address}}</label><br/>
+	<label>Age : {{friend.age}}</label>
+</div>
+<hr/>
+<h3>Add new friend</h3>
+<form novalidate>
+<label>Name :</label> <input  [(ngModel)]="name" placeholder = "name" required name = "name"/>
+<label>Address :</label> <input  [(ngModel)]="address" required placeholder="address" name="address"/>
+<label>Age :</label> <input type="number" required [(ngModel)] = "age" placeholder="age" name="age"/>
+
+<button (click)="addNewFriend()">Add New</button>
+</form>
